@@ -21,10 +21,10 @@ public class Helper {
         String name  = sc.next();
         System.out.println("Enter address. ");
         String address = sc.next();
-        Customer customer = new Customer(name, address);
-        stack.push(customer);
+        stack.push(createCustomer(name, address));
         System.out.println("==================================================================");
     }
+    
 
     public static void popElement(Stack stack){
         System.out.println("____________________________________________________________________");
@@ -50,5 +50,10 @@ public class Helper {
         System.out.println("6 to exit");
         System.out.println("-----------------------------------------------------------");
         System.out.println("Enter your choice: ");
+    }
+    
+    private static Customer createCustomer(String name, String address) {
+    	Customer customer = new Customer(name, address);
+    	return customer;
     }
 }

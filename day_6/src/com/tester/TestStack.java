@@ -11,6 +11,7 @@ public class TestStack {
         Scanner sc  =  new Scanner(System.in);
         Stack stack = null;
         boolean exit = false;
+        boolean flg = false;
 
         while(!exit) {
 
@@ -18,17 +19,30 @@ public class TestStack {
 
             switch (sc.nextInt()) {
                 case 1:
-
-                    stack = Helper.createStack(new FixedStack());
+                	if (!flg) {
+                		stack = Helper.createStack(new FixedStack());
+                		flg = true;
+                	}
+                	
+                	else {
+                		System.out.println("Instance already created.");
+                	}
                     break;
 
                 case 2:
 
-//                    stack = Helper.createStack(new GrowableStack());
-                    System.out.println("Growable stack");
+                	if (!flg) {
+                		stack = Helper.createStack(new GrowableStack());
+                		flg = true;
+                	}
+                	
+                	else {
+                		System.out.println("Instance already created.");
+                	}
                     break;
 
                 case 3:
+                	
                     Helper.pushElement(sc, stack);
                     break;
 
